@@ -68,6 +68,10 @@
 	line-height: 0.2;
 }
 
+.alert{
+	color: red;
+}
+
 .flash{
 	color: green;
 }
