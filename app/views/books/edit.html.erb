@@ -1,6 +1,18 @@
 <h2 class='edit_headline'>Editing Book</h2>
-
 <div class='edit'>
+<div class='alert'>
+<% if @book.errors.any? %>
+  <div class="alert alert-warning">
+  	<%= pluralize(@book.errors.count, 'error') %>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+<br>
 <%= form_for(@book) do |f| %>
 	<p class='form_data'>Title</p>
 	<%= f.text_field :title %>
